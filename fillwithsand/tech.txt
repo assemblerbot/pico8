@@ -1,0 +1,24 @@
+
+Simulation grid:
+    64x55 quad pixels
+        - top row and bottom row is not simulated, just read, there is always concrete (to avoid uneccessary boundary checks)
+        - also left border and right border are concrete, to avoid carry over boundary
+
+Memory:
+    0x1000 .. 0x2aa4 = 62x55x2 shuffled coordinates of all simulated pixels on screen (64x48 except boundaries)
+
+Materials:
+    Materials       Color       Index           Simulation
+    ---------------------------------------------------
+    void            - 0         - 0             - no simulation, not blocking
+    wall            - 5         - 1             - no simualtion, blocking everything, indestructible
+    wood            - 4         - 2             - no simulation, blocking everything, slow burn
+    ---             - 7         - 3             - unused, white texts
+    water-left      - 12/140    - 4             - liquid, not blocking, flows to left
+    water-right     - 12/148    - 5             - liquid, not blocking, flows to right
+    plant           - 11        - 6             - grow in water in all directions, blocking everything, fast burn
+    sand            - 15        - 7             - loose, blocking everything
+    burning wood    - 8,8,8,8   - 8,9,a,b       - slow burn
+    burning plant   - 8,8,8,8   - c,d,e,f       - fast burn
+
+    {5,4,7,12,12,3,15,8,9,8,9,8,9,8,9}
