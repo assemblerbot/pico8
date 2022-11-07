@@ -146,6 +146,40 @@ function lvl_c(goal)
     if(goal)printo("<- fILL\n   WITH\n   WATER!",85,90,0x4,0)
 end
 
+function lvl_d(goal)
+    rectfill(2,86,125,109,1)
+    rectfill(48,86,79,109,0)
+    rectfill(56,90,71,101,2)
+    if(goal)printo("<- fILL\n   WITH\n   PLANT!",85,90,0x6,0)
+
+    rectfill(2,2,125,19,4)
+end
+
+function lvl_e(goal)
+    rectfill(2,86,125,109,1)
+    rectfill(48,86,79,109,0)
+    rectfill(48,90,79,95,2)
+    rectfill(48,100,79,109,2)
+    if(goal)printo("<- fILL\n   WITH\n   PLANT!",85,90,0x6,0)
+
+    rectfill(2,2,125,3,2)
+    rectfill(2,2,3,85,2)
+    rectfill(124,2,125,85,2)
+    rectfill(2,84,3,85,0xc)
+end
+
+function lvl_f(goal)
+    rectfill(2,86,125,109,1)
+    rectfill(48,86,79,109,0)
+    rectfill(48,90,79,95,2)
+    rectfill(48,100,79,109,2)
+    if(goal)printo("<- fILL\n   WITH\n   PLANT!",85,90,0x6,0)
+
+    rectfill(2,2,7,15,6)
+    rectfill(2,32,7,47,6)
+    rectfill(2,64,7,79,6)
+end
+
 levels={
     {d=lvl1,x1=48,y1=86,x2=79,y2=109,m=0x77,minx=48,maxx=79,miny=2,maxy=85,tip="sAND SHOULD FALL INTO THE HOLE."},
     {d=lvl1a,x1=48,y1=86,x2=79,y2=109,m=0x77,minx=48,maxx=79,miny=2,maxy=85},
@@ -163,5 +197,7 @@ levels={
     {d=lvl_b,x1=48,y1=86,x2=79,y2=109,m=0x44,minx=2,maxx=125,miny=2,maxy=85},
     {d=lvl_c,x1=48,y1=86,x2=79,y2=109,m=0x44,minx=2,maxx=125,miny=2,maxy=85,tip="tIK TOK TIK TOK"}, -- very hard
 
-    --{d=lvl1a,x1=48,y1=86,x2=79,y2=109,m=0x77,minx=48,maxx=79,miny=2,maxy=85,avoid={0x11,0x44}},
+    {d=lvl_d,x1=48,y1=86,x2=79,y2=109,m=0x66,minx=2,maxx=125,miny=20,maxy=85,avoid={0x44}},
+    {d=lvl_e,x1=48,y1=86,x2=79,y2=109,m=0x66,minx=4,maxx=123,miny=4,maxy=85,avoid={0xcc}},
+    {d=lvl_f,x1=48,y1=86,x2=79,y2=109,m=0x66,minx=8,maxx=125,miny=4,maxy=85,avoid={0x66}}, -- very hard
 }
